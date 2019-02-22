@@ -486,6 +486,7 @@ Welcome to the Mojolicious real-time web framework!
 ---
 
 ## POST
+```
     @@ post.html.ep
     % # 新しいテンプレートを用意する
     % layout 'default';
@@ -497,6 +498,8 @@ Welcome to the Mojolicious real-time web framework!
       %= submit_button '投稿する'
     % end
     <p><%= $entry %></p>
+```
+@[1,7]
 
 - `index.html.ep` の部分をコピーして, `post.html.ep` というテンプレートを作成する
 - `form_for` に書いた `method => 'POST'` で, get ではなく post で送信するようになる
@@ -504,6 +507,7 @@ Welcome to the Mojolicious real-time web framework!
 ---
 
 ## POST
+```
     @@ index.html.ep
     % layout 'default';
     % # タイトルを変更
@@ -513,6 +517,8 @@ Welcome to the Mojolicious real-time web framework!
       %= text_field 'body'
       %= submit_button '投稿する'
     % end
+```
+@[4,6]
 
 - `@@ index.html.ep` では, `$entry` を表示させないようにする
 - その他, メソッドやタイトルも変更しておこう
@@ -520,6 +526,7 @@ Welcome to the Mojolicious real-time web framework!
 ---
 
 ## POST
+```
     get '/' => sub {
       my $c = shift;
       $c->render('index');
@@ -531,6 +538,7 @@ Welcome to the Mojolicious real-time web framework!
       $c->stash(entry => $entry);
       $c->render('post');
     };
+```
 
 - perl コードも変更しよう
   - 細々とした違いに注意!
@@ -557,6 +565,7 @@ Welcome to the Mojolicious real-time web framework!
 ---
 
 ## 記事を蓄える
+```
     @@ index.html.ep
     % layout 'default';
     % title '入力フォーム';
@@ -567,12 +576,15 @@ Welcome to the Mojolicious real-time web framework!
     % for my $entry (@{$entries}) {
         <p><%= $entry %></p>
     % }
+```
+@[8-10]
 
 - テンプレートに, 投稿済みの記事( `$entries` に格納されている )を表示するよう変更を加える
 
 ---
 
 ## 記事を蓄える
+```
     my @entries = (); # 空の配列を宣言
     get '/' => sub {
       my $c = shift;
@@ -587,6 +599,8 @@ Welcome to the Mojolicious real-time web framework!
       $c->stash(entry => $entry);
       $c->render('post');
     };
+```
+@[8-9]
 
 ---
 
