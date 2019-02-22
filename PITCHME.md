@@ -307,12 +307,15 @@ Welcome to the Mojolicious real-time web framework!
 ---
 
 ## 変数を渡す
+```
     get '/' => sub {
       my $c = shift;
       $c->stash(title => 'Hello');
       $c->render('index');
     };
     % title 'Welcome'; # => 削除する
+```
+@[3]
 
 - `$c->stash` で, テンプレート内の変数に変数を渡せる
 
@@ -499,7 +502,6 @@ Welcome to the Mojolicious real-time web framework!
     % end
     <p><%= $entry %></p>
 ```
-@[1,7]
 
 - `index.html.ep` の部分をコピーして, `post.html.ep` というテンプレートを作成する
 - `form_for` に書いた `method => 'POST'` で, get ではなく post で送信するようになる
@@ -565,7 +567,7 @@ Welcome to the Mojolicious real-time web framework!
 ---
 
 ## 記事を蓄える
-```
+```perl
     @@ index.html.ep
     % layout 'default';
     % title '入力フォーム';
@@ -600,7 +602,7 @@ Welcome to the Mojolicious real-time web framework!
       $c->render('post');
     };
 ```
-@[8-9]
+@[10-11]
 
 ---
 
@@ -618,13 +620,16 @@ Welcome to the Mojolicious real-time web framework!
 ---
 
 ## redirect\_to
+```
     post '/post' => sub {
       my $c = shift;
       my $entry = $c->param('body');
       push @entries, $entry;
-                               # '/'へ移る為、'post'へのstash は不要となるので削除
+                  # '/'へ移る為、'post'へのstash は不要となるので削除
       $c->redirect_to('/'); # 追加
     };
+```
+@[6]
 
 - `redirect_to` を利用して, `/`へのページ遷移を追加する
   - `post`のテンプレートはもう必要ないので, 削除しても問題ない
