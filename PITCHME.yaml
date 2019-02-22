@@ -9,6 +9,8 @@ theme : sky
 #フットノートの設定
 footnote : "© 2012-2018 Perl Entrance, Japan Perl Association"
 
+transition : fade
+
 
 #スライドのページ数表示の設定
 slide-number: true
