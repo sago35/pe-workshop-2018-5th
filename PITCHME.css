@@ -1,5 +1,7 @@
 .reveal ul {
   font-size: 32px;
+  margin-left: 20;
+  margin-right: 0;
 }
 
 .reveal pre code {
