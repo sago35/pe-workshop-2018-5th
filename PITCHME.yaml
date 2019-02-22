@@ -3,6 +3,7 @@ layout : top-left
 #テーマの設定
 theme : sky
 
+highlight : purebasic
 
 #ロゴアイコンの設定
 #logo : logo.png
