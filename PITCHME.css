@@ -1,13 +1,22 @@
 .reveal ul {
-  font-size: 36px;
+  font-size: 32px;
 }
 
 .reveal h1 {
   font-size: 64px;
   margin: 0 0 0 0;
+  text-transform:none;
 }
 
 .reveal h2 {
   font-size: 48px;
   margin: 0 0 0 0;
+  text-transform:none;
+}
+
+
+.reveal h3 {
+  font-size: 36px;
+  margin: 0 0 0 0;
+  text-transform:none;
 }
