@@ -451,12 +451,15 @@ Welcome to the Mojolicious real-time web framework!
 ---
 
 ## GET
+```perl
     get '/' => sub {
       my $c = shift;
       my $entry = $c->param('body');
       $c->stash(entry => $entry); # 追加
       $c->render('index');
     };
+```
+@[4]
 
 - 取得した情報をテンプレートに渡すため, `$c->stash(entry => $entry)` を挿入する
 - `entry` に変数 `$entry` を渡したので, テンプレートで `$entry` が使用可能になる
@@ -538,6 +541,9 @@ Welcome to the Mojolicious real-time web framework!
 - 記事を蓄えるための方法としては, いくつかの方法がある
     - DB (データベース) を利用
     - 外部ファイルに書き込み保存
+
++++
+
 - 今回は時間の制約上, データを蓄える方法として, **配列**を用いる
     - 言うまでもなく, 配列は Web アプリケーションが停止した時点で全てのデータが消えるので, 現実的ではない!
     - `MySQL`や`SQLite`などのデータベースを使うのがオススメです
@@ -619,6 +625,9 @@ Welcome to the Mojolicious real-time web framework!
 ## まとめ
 - 非常に簡単ではありますが, BBS (のような) Web サービスを開発してみました
     - 時間の制約上, 紹介できなかった部分 (適切な記事の蓄え方など...) が多くありますが, Perl を使った Web サービスの開発の基本的な流れは, このようになっています
+
++++
+    
     - 今日ここまで紹介してきた内容は, 基礎中の基礎です. ｢ Web サービスを作ろう!｣となると, やはりまだまだ挑戦しなければならない｢壁｣はいくつもあります
 - その時困ったら, Perl入学式の資料や, スタッフを是非頼って下さい!
 
