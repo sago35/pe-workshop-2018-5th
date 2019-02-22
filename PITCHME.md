@@ -294,10 +294,12 @@ Welcome to the Mojolicious real-time web framework!
 </html>
 ```
 
+```
 - ``<%= ... %>``（あるいは``%=``から始まる行）は、Perlのコードを実行するだけでなく、値を表示したい時に書きます。
 - ``<%= title %>``は、先のコードで``% title 'Welcome';``と指定したので、``Welcome``と表示されます。
 - ``title``は、テンプレート内で使える関数で、このようにHTMLファイルのタイトルを取得したり設定したりできる、便利な関数です。
 - ``content``は、レイアウトテンプレート内で使える関数で、通常のテンプレートの中身を取得する関数です。
+```
 
 ---
 
@@ -439,11 +441,14 @@ Welcome to the Mojolicious real-time web framework!
 ---
 
 ## GET
+```perl
     get '/' => sub {
       my $c = shift;
       my $entry = $c->param('body'); # 追加
       $c->render('index');
     };
+```
+@[3]
 
 - form の情報を取得するために, 上記のように 1 行追加する
 - `$c->param('body')` は フォームから投稿した `body` という名前の値を取得する
