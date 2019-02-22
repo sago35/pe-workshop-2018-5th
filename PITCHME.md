@@ -319,6 +319,7 @@ Welcome to the Mojolicious real-time web framework!
 ---
 
 ## 練習問題
+```
     @@ profile.html.ep
     <html>
     <head><title><%= $name %>のプロフィール</title></head>
@@ -327,6 +328,7 @@ Welcome to the Mojolicious real-time web framework!
       趣味は<%= $hobby %>で, 好きなプログラミング言語は<%= $language %>です.
     </body>
     </html>
+```
 
 - このようなテンプレートを用意し, stash で `name`, `hobby`, `language` 変数に値を代入し, 自己紹介ページを作成しよう
     - `render` で profile テンプレートを指定しましょう
