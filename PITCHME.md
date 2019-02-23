@@ -502,6 +502,7 @@ Welcome to the Mojolicious real-time web framework!
     % end
     <p><%= $entry %></p>
 ```
+@[7]
 
 - `index.html.ep` の部分をコピーして, `post.html.ep` というテンプレートを作成する
 - `form_for` に書いた `method => 'POST'` で, get ではなく post で送信するようになる
